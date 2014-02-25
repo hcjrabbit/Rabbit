@@ -1,0 +1,46 @@
+<details data-type="font">
+    <summary>字体</summary>
+    <div class="item">
+        <label>大小:</label>
+        <input type="number" value="<%= data.font.size %>" data-type="size">
+    </div>
+    <div class="item">
+        <label>颜色:</label>
+        <input type="text" value="<%= data.font.color %>" data-type="color">
+        <input type="color" class="inputColor">
+    </div>
+    <div class="item">
+        <label>样式:</label>
+        <select data-type="style">
+            <option value="normal"
+                    <% if(data.font.style == 'normal'){ %>
+                    selected
+                    <% } %>
+                    >普通
+            </option>
+            <option value="italic"
+                    <% if(data.font.style == 'italic'){ %>
+                    selected
+                    <% } %>
+                    >斜体
+            </option>
+        </select>
+    </div>
+    <div class="item">
+        <label>字体类型:</label>
+        <select data-type="family">
+            <option value="songti"
+                    <% if(data.font.type == 'songti'){ %>
+                    selected
+                    <% } %>
+                    >宋体
+            </option>
+            <option value="yahei"
+                    <% if(data.font.type == 'yahei'){ %>
+                    selected
+                    <% } %>
+                    >黑体
+            </option>
+        </select>
+    </div>
+</details>

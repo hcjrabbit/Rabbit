@@ -1,0 +1,14 @@
+<details data-type="form">
+    <summary>表单属性</summary>
+    <div class="item">
+        <label>提交路径:</label>
+        <input type="text" value="<%= data.form.active %>" data-type="active">
+    </div>
+    <div class="item">
+        <label>提交方式:</label>
+        <select  data-type="method">
+            <option value="get" <% if(data.form.method == 'get'){ %> selected <%}%>>get</option>
+            <option value="post"  <% if(data.form.method == 'post'){ %> selected <%}%>>post</option>
+        </select>
+    </div>
+</details>

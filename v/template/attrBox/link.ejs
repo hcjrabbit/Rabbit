@@ -1,0 +1,14 @@
+<details>
+    <summary>链接属性</summary>
+    <div class="item">
+        <label>title:</label>
+        <input type="text" placeholder="文案" value="<%= data.title %>" data-type="title">
+    </div>
+    <div class="item">
+        <label>打开方式:</label>
+        <select  data-type="family">
+            <option value="_blank" <% if(data.target == '_blank'){ %> selected <%}%>>_blank</option>
+            <option value="_self"  <% if(data.target == '_self'){ %> selected <%}%>>_self</option>
+        </select>
+    </div>
+</details>

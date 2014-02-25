@@ -1,0 +1,13 @@
+{
+    "name": "Rabbit",
+    "main": "v/main.html",
+    "description" : "Code editor",
+    "version" : "v1.0",
+    "window": {
+        "icon":"v/img/logo.png",
+        "toolbar": true,
+        "position": "center",
+        "width": 800,
+        "height": 500
+    }
+} 

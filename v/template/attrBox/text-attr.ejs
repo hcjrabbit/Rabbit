@@ -1,0 +1,36 @@
+<details>
+    <summary>文本属性</summary>
+    <div class="item" data-type="text">
+        <label>对齐方式:</label>
+        <select  data-type="align">
+            <option value="center" <% if(data.text.align == 'center'){ %> selected <%}%>>居中</option>
+            <option value="left" <% if(data.text.align == 'left'){ %> selected <%}%>>居左</option>
+            <option value="right" <% if(data.text.align == 'right'){ %> selected <%}%>>居右</option>
+        </select>
+    </div>
+    <div class="item" data-type="line">
+        <label>行高:</label>
+        <input type="text" placeholder="normal" value="<%= data.line.height %>" style="width: 100px;" data-type="height">
+    </div>
+    <div class="item" data-type="text">
+        <label>样式:</label>
+        <select  data-type="decoration">
+            <option value="none" <% if(data.text.decoration == 'none'){ %> selected <%}%>>无</option>
+            <option value="underline" <% if(data.text.decoration == 'underline'){ %> selected <%}%>>下划线</option>
+            <option value="line-through" <% if(data.text.decoration == 'line-through'){ %> selected <%}%>>中划线</option>
+            <option value="overline" <% if(data.text.decoration == 'overline'){ %> selected <%}%>>上划线</option>
+        </select>
+    </div>
+    <div class="item" data-type="font">
+        <label>加粗:</label>
+        <input type="checkbox" <% if(data.font.weight == true){ %> checked <%}%> data-type="weight">
+    </div>
+
+    <!--<div class="item">-->
+        <!--<label>下划线:</label>-->
+        <!--<select  data-type="family">-->
+            <!--<option value="songti" <% if(data.font.type == 'songti'){ %> selected <%}%>>宋体</option>-->
+            <!--<option value="yahei"  <% if(data.font.type == 'yahei'){ %> selected <%}%>>黑体</option>-->
+        <!--</select>-->
+    <!--</div>-->
+</details>

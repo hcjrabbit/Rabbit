@@ -1,0 +1,67 @@
+<details  data-type="border">
+    <summary>边框</summary>
+    <div class="item">
+        <label>↑大小:</label>
+        <input type="number"  value="<%= data.border.topSize %>"  data-type="topSize">
+    </div>
+    <div class="item">
+        <label>↑颜色:</label>
+        <input type="text" value="<%= data.border.topColor %>"  data-type="topColor">
+        <input type="color"  class="inputColor">
+    </div>
+    <div class="item">
+        <label>↑类型:</label>
+        <select  data-type="topStyle">
+            <option value="solid" <% if(data.border.topStyle == 'solid'){ %> selected <%}%>>实线</option>
+            <option value="dashed" <% if(data.border.topStyle == 'dashed'){ %> selected <%}%>>虚线</option>
+        </select>
+    </div>
+    <div class="item">
+        <label>→大小:</label>
+        <input type="number"  value="<%= data.border.rightSize %>"  data-type="rightSize">
+    </div>
+    <div class="item">
+        <label>→颜色:</label>
+        <input type="text" value="<%= data.border.rightColor %>"  data-type="rightColor">
+        <input type="color"  class="inputColor">
+    </div>
+    <div class="item">
+        <label>→类型:</label>
+        <select  data-type="rightStyle">
+            <option value="solid" <% if(data.border.rightStyle == 'solid'){ %> selected <%}%>>实线</option>
+            <option value="dashed" <% if(data.border.rightStyle == 'dashed'){ %> selected <%}%>>虚线</option>
+        </select>
+    </div>
+    <div class="item">
+        <label>↓大小:</label>
+        <input type="number"  value="<%= data.border.bottomSize %>"  data-type="bottomSize">
+    </div>
+    <div class="item">
+        <label>↓颜色:</label>
+        <input type="text" value="<%= data.border.bottomColor %>"  data-type="bottomColor">
+        <input type="color"  class="inputColor">
+    </div>
+    <div class="item">
+        <label>↓类型:</label>
+        <select  data-type="bottomStyle">
+            <option value="solid" <% if(data.border.bottomStyle == 'solid'){ %> selected <%}%>>实线</option>
+            <option value="dashed" <% if(data.border.bottomStyle == 'dashed'){ %> selected <%}%>>虚线</option>
+        </select>
+    </div>
+    <div class="item">
+        <label>←大小:</label>
+        <input type="number"  value="<%= data.border.leftSize %>"  data-type="leftSize">
+    </div>
+    <div class="item">
+        <label>←颜色:</label>
+        <input type="text" value="<%= data.border.leftColor %>"  data-type="leftColor">
+        <input type="color"  class="inputColor">
+    </div>
+    <div class="item">
+        <label>←类型:</label>
+        <select  data-type="leftStyle">
+            <option value="solid" <% if(data.border.leftStyle == 'solid'){ %> selected <%}%>>实线</option>
+            <option value="dashed" <% if(data.border.leftStyle == 'dashed'){ %> selected <%}%>>虚线</option>
+        </select>
+    </div>
+</details>

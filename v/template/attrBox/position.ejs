@@ -1,0 +1,28 @@
+<details data-type="position">
+    <summary>布局</summary>
+    <div class="item">
+        <label>position:</label>
+        <select  data-type="type">
+            <option value="static"  <% if(data.position.type == 'static'){ %> selected <%}%>>static</option>
+            <option value="relative"  <% if(data.position.type == 'relative'){ %> selected <%}%>>relative</option>
+            <option value="absolute"  <% if(data.position.type == 'absolute'){ %> selected <%}%>>absolute</option>
+            <option value="fixed"  <% if(data.position.type == 'fixed'){ %> selected <%}%>>fixed</option>
+        </select>
+    </div>
+    <div class="item">
+        <label>X偏移:</label>
+        <select data-type="xType">
+            <option value="static"  <% if(data.position.xType == 'left'){ %> selected <%}%>>left</option>
+            <option value="relative"  <% if(data.position.xType == 'right'){ %> selected <%}%>>right</option>
+        </select>
+        <input type="number" placeholder="x" value="<%= data.position.x %>"  data-type="<%= data.position.x %>">
+    </div>
+    <div class="item">
+        <label>Y偏移:</label>
+        <select data-type="yType">
+            <option value="static"  <% if(data.position.yType == 'top'){ %> selected <%}%>>top</option>
+            <option value="relative"  <% if(data.position.yType == 'bottom'){ %> selected <%}%>>bottom</option>
+        </select>
+        <input type="number" placeholder="y" value="<%= data.position.y %>"  data-type="<%= data.position.y %>">
+    </div>
+</details>

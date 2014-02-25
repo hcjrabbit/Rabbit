@@ -1,0 +1,10 @@
+<a href="javascript:;" <% if(data.isFile) {%> class="file" <%}%>  data-id="<%= data.id %>" >
+    <% if(!data.isFile) {%>
+    <i class="icon-sort-down"></i>
+    <%= data.name %>
+    <% }else{ %>
+    <i class="icon-file"></i>
+    <%= data.name %>
+    <% } %>
+    <input type="hidden" value="<%= data.path %>" class="path"/>
+</a>

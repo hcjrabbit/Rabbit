@@ -1,0 +1,20 @@
+<div class="editor" id="newEditor">
+    <div class="editor-name">
+        <span>
+               <span>
+                   <input class="edaitable" type="text" value="filename" placeholder="filename" id="newFileName">
+               </span>
+        </span>
+        <span class="fileTypeBox">
+            <select id="fileType">
+                <%for(var key in data.fileTypes){%>
+                    <option value="<%= key %>"><%= key %></option>
+                <%}%>
+            </select>
+        </span>
+        <span class="isJimuBox">
+            <input type="checkbox"   class="isJimuPage" id="isJimuPage" style="margin-right: 5px"/>
+            <label for="isJimuPage">积木页面</label>
+        </span>
+    </div>
+</div>

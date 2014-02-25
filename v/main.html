@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rabbit</title>
+    <meta charset="utf-8">
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <link href="css/themes/default/theme.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<aside class="flex" id="aside">
+    <header class="flex">
+        <h1 title="just a editor">
+            <a href="#">
+                Rabbit
+            </a>
+        </h1>
+        <a href="javascript:;" class="open" id="open" title="打开">
+            <i class="icon-inbox"></i>
+        </a>
+        <a href="javascript:;" class="refresh" id="refresh" title="刷新">
+            <i class="icon-refresh"></i>
+        </a>
+    </header>
+    <ul id="projects">
+
+    </ul>
+    <footer class="flex">
+        <div>
+            <span>共 <span id="totalProjects">0</span> 项目</span>
+            <span title="server status" ><i class="icon-globe" id="onlineStatus"></i> 不在线</span>
+        </div>
+    </footer>
+</aside>
+<div class="main flex">
+    <header>
+        <div>
+            <a class="button" id="aside-left" title="左侧收缩"><i class="icon-angle-left icon-cog"></i></a>
+            <a class="button hide" id="aside-right" title="左侧伸展"><i class="icon-angle-right icon-cog"></i></a>
+            <!--<a class="button" id="setting" title="全局设置"><i class="settings icon-cog"></i></a>-->
+            <a class="button" title="新建文件" id="newFile"><i class="create icon-file"></i></a>
+            <!--<a class="button" title="上传图片" id="uploadImage">-->
+                <!--<i class="uploadImage icon-camera"></i>-->
+            <!--</a>-->
+        </div>
+    </header>
+    <div class="messenger msg_delete warn">
+        <i class="icon-warning-sign"> </i>
+        <span>该页面不符合积木标准，无法转换</span>
+    </div>
+    <div class="messenger ok doNotCreateLast">
+        <i class="icon-ok-sign"> </i>
+        <span>该页面无需生成最终文件</span>
+    </div>
+    <div class="messenger ok doCreateLastOk">
+        <i class="icon-ok-sign"> </i>
+        <span>生成最终文件成功！</span>
+    </div>
+    <div class="messenger openDirectory  edit">
+        <i class="icon-edit"> </i>
+        <span>还没有项目，是否设置<b>工作目录</b> <a href="javascript:;" class="doIt">YES</a> | <a href="javascript:;" class="cancel">cancel</a></span>
+    </div>
+    <div class="messenger openProject  edit">
+        <i class="icon-edit"> </i>
+        <span>还未打开项目，是否打开<b>第一个</b>项目 <a href="javascript:;" class="doIt">YES</a> | <a href="javascript:;"
+                                                                                       class="cancel">cancel</a></span>
+    </div>
+    <div class="messenger newFileMessage  edit">
+        <i class="icon-edit"> </i>
+        <span>是否保存 <a href="javascript:;" class="doIt">YES</a> | <a href="javascript:;" class="cancel">cancel</a></span>
+    </div>
+    <div class="messenger loading saving">
+        <i class="icon-spin icon-spinner"> </i>
+        <span>保存中...</span>
+    </div>
+    <div class="messenger loading opening">
+        <i class="icon-spin icon-spinner"> </i>
+        <span>Loadding...</span>
+    </div>
+    <div class="filesTab" id="filesTab">
+    </div>
+    <div class="mainWrap">
+        <section id="main-box">
+
+        </section>
+        <section id="mod-box" class="modBox hide">
+            <header>
+                <h3>
+                    <a class="button hide" id="modBox-left" title="左侧收缩"><i class="icon-angle-left icon-cog"></i></a>
+                    <a class="button " id="modBox-right" title="左侧伸展"><i class="icon-angle-right icon-cog"></i></a>
+                    <div class="btn-group nav-tabs" data-toggle="buttons-radio" id="modBox-selectMode">
+                        <button class="btn btn-primary active" data-toggle="tab"
+                                data-target='#mod-box-layout-box-content'>布局
+                        </button>
+                        <button class="btn btn-primary" data-toggle="tab" data-target='#mod-box-normal-box-content'>
+                            普通组件
+                        </button>
+                        <button class="btn btn-primary" data-toggle="tab" data-target='#mod-box-custom-box-content'>自定义组件</button>
+                    </div>
+                </h3>
+            </header>
+            <div class="tab-content" id="mod-box-layout-box">
+                <div class="mod-box-content tab-pane active" id="mod-box-layout-box-content">
+                    <div class="show-grid row-fluid" draggable="true" data-codeType="L-0">
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                        <div class="span1">1</div>
+                    </div>
+                    <div class=" row-fluid show-grid" draggable="true" data-codeType="L-1">
+                        <div class="span4">4</div>
+                        <div class="span4">4</div>
+                        <div class="span4">4</div>
+                    </div>
+                    <div class=" row-fluid show-grid" data-codeType="L-2">
+                        <div class="span4">4</div>
+                        <div class="span8">8</div>
+                    </div>
+                    <div class=" row-fluid show-grid" data-codeType="L-3">
+                        <div class="span6">6</div>
+                        <div class="span6">6</div>
+                    </div>
+                    <div class=" row-fluid show-grid" data-codeType="L-4">
+                        <div class="span12">12</div>
+                    </div>
+                </div>
+                <div class="mod-box-content tab-pane fade" id="mod-box-normal-box-content">
+                    <div class=" row-fluid show-grid">
+                        <div class="span6" data-codeType="N-TEXT">
+                            文字
+                        </div>
+                        <div class="span6" data-codeType="N-P">
+                            段落
+                        </div>
+                    </div>
+                    <div class=" row-fluid show-grid">
+                        <div class="span6" data-codeType="N-LINK">
+                            链接
+                        </div>
+                        <div class="span6" data-codeType="N-IMAGE">
+                            图片
+                        </div>
+                    </div>
+                    <div class=" row-fluid show-grid">
+                        <div class="span6" data-codeType="N-BUTTON">
+                            按钮
+                        </div>
+                        <div class="span6" data-codeType="N-ICON">
+                            图标
+                        </div>
+                    </div>
+                    <div class=" row-fluid show-grid">
+                        <div class="span6" data-codeType="N-LABEL">
+                            label
+                        </div>
+                        <div class="span6" data-codeType="N-FORM">
+                            表单
+                        </div>
+                    </div>
+                    <div class=" row-fluid show-grid formUI">
+                        <div class="span12" data-codeType="N-INPUT">
+                            <input type="text" placeholder="文本输入框" disabled style="width: 90%;" />
+                        </div>
+                    </div>
+                    <div class=" row-fluid show-grid formUI">
+                        <div class="span4" data-codeType="N-SELECT">
+                            <select disabled style="width: 90%;">
+                                <option>下拉选择框</option>
+                            </select>
+                        </div>
+                        <div class="span4" data-codeType="N-INPUT-RADIO">
+                            <input type="radio" disabled checked/>单选框
+                        </div>
+                        <div class="span4" data-codeType="N-INPUT-CHECKBOX">
+                            <input type="checkbox" checked disabled/>复选框
+                        </div>
+                    </div>
+                    <div class=" row-fluid show-grid formUI">
+                        <div class="span12" data-codeType="N-TEXTAREA">
+                            <textarea disabled style="width: 90%;height: 50px;">文本域</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod-box-content tab-pane fade" id="mod-box-custom-box-content">
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="attr_wrap" id="attrWrap">
+        <span class="clicky">
+            <span id="attrWrapName">页面</span>属性 <i class="icon-arrow-up"> 展开</i>
+        </span>
+        <section class="attr_content">
+        </section>
+    </div>
+    <footer class="ng-scope">
+        © 2014 <b>Rabbit</b> | http://www.ccavvi.com
+    </footer>
+</div>
+<input class="hide" id="openDialog" type="file" nwdirectory/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/ejs.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-button.js"></script>
+<script type="text/javascript" src="js/bootstrap-tab.js"></script>
+<script type="text/javascript" src="../c/ace/src-min-noconflict/ace.js"></script>
+<script type="text/javascript" src="../c/ace/src-min-noconflict/ext-language_tools.js"></script>
+<script type="text/javascript" src="../c/app.js"></script>
+</body>
+</html>

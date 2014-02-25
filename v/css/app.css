@@ -1,0 +1,728 @@
+@import url('reset.css');
+@import url('font-awesome.css');
+@import url('bootstrap.css');
+@import url('bootstrap-responsive.css');
+*:focus,
+*:hover {
+  outline: none;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px;
+  background: #f2f2f2;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+::-webkit-scrollbar-corner {
+  background: #fff;
+}
+.layout:after {
+  height: 0;
+  content: '.';
+  overflow: hidden;
+  display: block;
+  clear: both;
+}
+.flex {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+}
+.bold {
+  font-weight: bold;
+}
+.hide {
+  display: none;
+}
+h1 {
+  font-size: 1.5em;
+}
+html {
+  overflow: hidden;
+  height: 100%;
+  font: 20px/1.231 'trebuchet ms', arial, sans-serif;
+}
+body {
+  display: -webkit-flex;
+  margin: 0;
+  height: 100%;
+  -webkit-user-select: none;
+  cursor: default;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  color: #000;
+}
+h1 a {
+  text-decoration: none;
+}
+div.toolbox {
+  -webkit-user-select: none;
+  z-index: 5;
+  margin: 0;
+  padding: 10px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 14px;
+}
+div.toolbox span {
+  float: left;
+  width: 425px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+div.toolbox span i {
+  padding: 0px 5px;
+  border-radius: 2px;
+  font-style: normal;
+}
+div.toolbox span.toolbtn {
+  float: none;
+  width: auto;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+div.toolbox a {
+  padding: 0px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+aside {
+  -webkit-flex: 0 0 30%;
+  height: 100%;
+}
+aside header {
+  position: relative;
+  padding: 0px 10px;
+  text-align: left;
+  line-height: 50px;
+}
+aside header .open,
+aside header .refresh {
+  position: absolute;
+  right: 7px;
+  bottom: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  width: 35px;
+  text-align: center;
+  display: block;
+  font: 12px/1.5 Tahoma, Arial, sans-serif;
+}
+aside header .refresh {
+  border: 1px solid #999;
+  background: #f2f2f2;
+  color: #555;
+  right: 50px;
+}
+aside > ul {
+  -webkit-flex: 1;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0px;
+  min-height: 0;
+  list-style: none;
+}
+aside > ul > li {
+  position: relative;
+}
+aside > ul > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font: 300 16px 'trebuchet ms', arial, sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  font-size: 12px;
+}
+aside > ul > li > a i.del {
+  display: none;
+  position: absolute;
+  right: 7px;
+  top: 14px;
+  font-size: 17px;
+}
+aside > ul > li > a > h3 {
+  margin: 0px 0px 5px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 20px;
+}
+aside > ul > li > a span {
+  margin: 0px -5px 0px 0px;
+  padding: 0px 4px;
+  text-shadow: none;
+}
+aside > ul > li > a span.secret,
+aside > ul > li > a span.public {
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+aside > ul > li > a p {
+  margin: 10px 0px 0;
+}
+aside > ul > li > a p span {
+  margin: 0px 4px 0px 0px;
+  border: none;
+  background: transparent;
+}
+aside > ul > li > a.open {
+  padding: 5px 20px 0;
+}
+aside > ul > li > a:hover i.del {
+  display: block;
+}
+aside > ul > li > a:hover span.pills {
+  text-shadow: none;
+}
+aside > ul > li ul {
+  display: none;
+  font-size: 14px;
+}
+aside > ul > li ul li {
+  padding-left: 15px;
+  line-height: 22px;
+}
+aside > ul > li ul li a {
+  border-bottom: none;
+}
+aside > ul > li ul li a i {
+  margin-right: 5px;
+}
+aside > ul > li li.open > ul {
+  display: block;
+}
+aside > ul > li > ul {
+  display: none;
+  padding-left: 30px;
+}
+aside > ul > li > ul > li {
+  padding-left: 0;
+}
+aside > ul > li .active ~ ul {
+  display: block;
+}
+aside > ul > li:first-child {
+  border-top: none;
+}
+aside footer {
+  padding: 5px;
+  font: 300 14px 'trebuchet ms', arial, sans-serif;
+}
+aside footer div {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+}
+aside footer span:first-child {
+  -webkit-flex: 1 0 0;
+}
+.main {
+  position: relative;
+  z-index: 1;
+  -webkit-flex: 1;
+}
+.main header {
+  position: relative;
+  padding: 0px 10px;
+  text-align: left;
+  line-height: 50px;
+}
+.main section {
+  -webkit-flex: 1;
+  overflow-y: scroll;
+  padding: 5px;
+  min-height: 0;
+  font-size: 12px;
+}
+.main footer {
+  padding: 5px;
+  text-align: center;
+  font: 300 14px 'trebuchet ms', arial, sans-serif;
+}
+menu {
+  -webkit-padding-start: 0px;
+}
+div.main header .button {
+  float: right;
+  margin: 6px 0px 0px 5px;
+}
+div.main header .button i {
+  padding: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  position: relative;
+  display: inherit;
+}
+div.main header #aside-left,
+div.main header #aside-right {
+  float: left;
+}
+div.main header a .notify span {
+  border: 3px solid #C00;
+  position: absolute;
+  left: 0;
+  color: #FFF;
+  font-size: 8px;
+  background: #C00;
+  top: 0;
+  padding: 0;
+  text-shadow: none;
+  box-shadow: 1px 1px 0px #F2F2F2;
+}
+div.main img.gravatar {
+  top: 0px;
+  padding: 0px;
+  width: 34px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.editor {
+  margin: 0px 0px 20px 0px;
+  padding: 0px;
+}
+.editor pre {
+  margin: 0;
+  padding: 10px;
+}
+.editorMain {
+  display: -webkit-flex;
+}
+.editor-name {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+}
+.editor-name a,
+.editor-name .viewSelect,
+.editor-name .viewInBrowser,
+.editor-name .jimuSave,
+.editor-name .createLastFile {
+  position: relative;
+  top: 0px;
+  right: -10px;
+  display: block;
+  float: right;
+  width: 38px;
+  height: 22px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+.editor-name .viewSelect,
+.editor-name .viewInBrowser,
+.editor-name .jimuSave,
+.editor-name .createLastFile {
+  display: none;
+  width: 59px;
+  padding: 0px 10px;
+  border-radius: 2px;
+  font: 12px/1.5 Tahoma, Arial, sans-serif;
+}
+.editor-name .viewSelect code,
+.editor-name .viewInBrowser code,
+.editor-name .jimuSave code,
+.editor-name .createLastFile code {
+  top: 2px;
+  position: absolute;
+  padding: 0 2px;
+}
+.editor-name .viewInBrowser,
+.editor-name .jimuSave,
+.editor-name .createLastFile {
+  width: 30px;
+  line-height: 23px;
+}
+.editor-name .createLastFile {
+  width: 80px;
+}
+.editor-name > b {
+  position: relative;
+  top: 3px;
+  left: 6px;
+  float: left;
+}
+.editor-name > i {
+  position: relative;
+  top: 4px;
+  float: left;
+}
+.editor-name input.edaitable {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  margin: 0;
+  padding: 5px;
+  width: 200px;
+  border-radius: 3px;
+}
+.editor-name span {
+  line-height: 22px;
+}
+.editor-name .fileTypeBox {
+  position: absolute;
+  left: 226px;
+}
+.editor-name .isJimuBox {
+  position: relative;
+  left: 360px;
+}
+.editorArea {
+  -webkit-flex: 1;
+}
+.editor_view {
+  -webkit-flex: 1;
+  position: relative;
+  padding: 10px;
+  overflow: auto;
+}
+.editor_view iframe {
+  width: 100%;
+  min-height: 400px;
+  border: none;
+}
+section input[type="text"] {
+  display: inline-block;
+  margin: 2px 0;
+  padding: 2px;
+  width: 30px;
+  border-radius: 5px;
+}
+section input[type="number"] {
+  width: 30px;
+  text-align: center;
+}
+section input[type="text"].desc {
+  width: 100%;
+}
+section h1 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+header input.edaitable {
+  margin: 0;
+  padding: 5px;
+  width: 50%;
+  border-radius: 3px;
+}
+div.filesTab {
+  -webkit-user-select: none;
+  z-index: 5;
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 14px;
+}
+div.filesTab span {
+  float: left;
+  width: 425px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+div.filesTab span i {
+  padding: 0px 5px;
+  border-radius: 2px;
+  font-style: normal;
+}
+div.filesTab span.item {
+  float: none;
+  width: auto;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+div.filesTab a {
+  padding: 0px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 11px;
+  margin: 0px 3px 0px 0px;
+}
+.notification div {
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  z-index: 9;
+  font-size: 9pt;
+  line-height: 20px;
+  padding: 5px;
+  text-shadow: none;
+  border-radius: 5px;
+  min-height: 106px;
+  width: 90px;
+}
+.notification div ul {
+  width: 80px;
+  list-style: none;
+  padding: 5px;
+  margin: 0px;
+  overflow: auto;
+  max-height: 300px;
+}
+.notification div ul li {
+  width: 60px;
+  float: left;
+  margin: 0px 0px 5px 0px;
+  padding: 0 10px;
+  border-radius: 3px;
+  position: relative;
+}
+.notification div ul li a {
+  font-size: 12px;
+}
+.notification div:after,
+.notification div:before {
+  bottom: 100%;
+  left: 151%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.notification div:before {
+  border-width: 11px;
+  margin-left: -136px;
+}
+.notification div:after {
+  border-width: 10px;
+  margin-left: -136px;
+}
+.attr_wrap {
+  display: none;
+  position: relative;
+  z-index: 9;
+  overflow-x: auto;
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 14px;
+}
+.attr_wrap .clicky {
+  display: block;
+  cursor: pointer;
+}
+.attr_wrap i {
+  float: right;
+}
+.attr_wrap .attr_content {
+  display: none;
+}
+.attr_wrap .attr_content [data-type=color] {
+  width: 60px;
+}
+details {
+  display: inline-block;
+  background: transparent;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
+details summary {
+  margin: 2px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+details .item {
+  display: inline-block;
+  margin: 0 5px;
+}
+.mainWrap {
+  display: -webkit-flex;
+  -webkit-flex: 1;
+}
+.mainWrap #mod-box {
+  -webkit-flex: 0 0 30%;
+  overflow: visible;
+}
+.modBox header .btn-group {
+  position: relative;
+  top: 7px;
+}
+.modBox header #modBox-left,
+.modBox header #modBox-right {
+  position: absolute;
+  right: 4px;
+  z-index: 10;
+}
+.modBox .tab-content {
+  position: relative;
+  padding: 10px;
+  background-color: white;
+}
+.show-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.show-grid [class*="span"] {
+  background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  min-height: 30px;
+  line-height: 30px;
+}
+#mod-box-layout-box-content .show-grid:hover [class*="span"] {
+  background: #ddd;
+}
+#mod-box-normal-box-content [class*="span"]:hover {
+  background: #ddd;
+}
+.formUI {
+  margin-bottom: 0;
+}
+.formUI [class*="span"] {
+  background: none;
+  padding: 3px 0;
+}
+.editor_jimu {
+  width: 100%;
+  position: relative;
+  overflow-x: scroll;
+}
+.editor_jimu .jimu_wrap {
+  min-width: 1024px;
+}
+.jimu_wrap .body {
+  padding: 10px;
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+}
+.jimu_wrap .body * {
+  position: relative;
+  cursor: default;
+}
+.jimu_wrap .body [editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 3px 3px 13px #808080;
+  margin-bottom: 10px;
+}
+.jimu_wrap .body div.row-fluid {
+  padding-bottom: 10px;
+}
+.jimu_wrap .body div.row-fluid div.span1,
+.jimu_wrap .body div.row-fluid div.span2,
+.jimu_wrap .body div.row-fluid div.span3,
+.jimu_wrap .body div.row-fluid div.span4,
+.jimu_wrap .body div.row-fluid div.span5,
+.jimu_wrap .body div.row-fluid div.span6,
+.jimu_wrap .body div.row-fluid div.span7,
+.jimu_wrap .body div.row-fluid div.span8,
+.jimu_wrap .body div.row-fluid div.span9,
+.jimu_wrap .body div.row-fluid div.span10,
+.jimu_wrap .body div.row-fluid div.span11,
+.jimu_wrap .body div.row-fluid div.span12 {
+  min-height: 100px;
+  margin-bottom: 0;
+}
+.jimu_wrap .body .tmpDivCloseWillDel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: tomato;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+}
+.jimu_wrap .body .focus {
+  border: 2px blue solid;
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 0 0 10px rgba(82, 168, 236, 0.9);
+}
+.jimu_wrap .body .page {
+  min-height: 1000px;
+}
+.jimu_wrap .body span[editable],
+.jimu_wrap .body a[editable],
+.jimu_wrap .body i[editable],
+.jimu_wrap .body img[editable],
+.jimu_wrap .body label[editable] {
+  display: block;
+}
+.jimu_wrap .body span[editable],
+.jimu_wrap .body a[editable],
+.jimu_wrap .body p[editable],
+.jimu_wrap .body label[editable] {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+}
+.jimu_wrap .body p[editable] {
+  width: 100%;
+}
+.jimu_wrap .body form[editable] {
+  width: 100%;
+  height: 200px;
+}
+.jimu_wrap .body a[editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 1px 2px 8px #ff0000;
+}
+.jimu_wrap .body input[editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 1px 2px 8px;
+}
+.jimu_wrap .body form[editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 1px 2px 8px #008000;
+}
+.jimu_wrap .body button[editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 1px 2px 8px #0480be;
+}
+.jimu_wrap .body span[editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 1px 2px 8px #daa520;
+}
+.jimu_wrap .body span[editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 1px 2px 8px #8fbc8f;
+}
+.jimu_wrap .body img[editable] {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 1px 2px 8px #bd9f7f;
+}
+.messenger {
+  display: none;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 30px;
+  z-index: 10;
+  right: 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px #000;
+}
+.messenger a {
+  padding: 0px 3px;
+  border-radius: 2px;
+  background: #FFF;
+  box-shadow: 1px 1px 1px #555;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 12px;
+}
+.mod-box-content {
+  position: relative;
+}
+.online {
+  color: #468847;
+}

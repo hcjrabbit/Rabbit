@@ -1,0 +1,14 @@
+<details>
+    <summary>单选框属性</summary>
+    <div class="item">
+        <label>是否选中:</label>
+        <select  data-type="checked">
+            <option value="YES" <% if(data.inputType == 'YES'){ %> selected <%}%>>YES</option>
+            <option value="NO" <% if(data.inputType == 'NO'){ %> selected <%}%>>NO</option>
+        </select>
+    </div>
+    <div class="item">
+        <label>name:</label>
+        <input type="text" value="<%= data.name %>" data-type="name">
+    </div>
+</details>

@@ -1,0 +1,16 @@
+<details>
+    <summary>输入框属性</summary>
+    <div class="item">
+        <label>输入框类型:</label>
+        <select  data-type="inputType">
+            <option value="text" <% if(data.inputType == 'text'){ %> selected <%}%>>text</option>
+            <option value="hidden" <% if(data.inputType == 'hidden'){ %> selected <%}%>>hidden</option>
+            <option value="color" <% if(data.inputType == 'color'){ %> selected <%}%>>color</option>
+            <option value="number" <% if(data.inputType == 'number'){ %> selected <%}%>>number</option>
+        </select>
+    </div>
+    <div class="item">
+        <label>name:</label>
+        <input type="text" value="<%= data.name %>" data-type="name">
+    </div>
+</details>

@@ -1,0 +1,58 @@
+<div class="editor" id="boxId-<%= data.id %>" data-id="<%= data.id %>">
+    <div class="editor-name">
+            <span>
+               <span>
+                    <i class="icon-file-alt"></i>
+                    <%= data.name %>
+                </span>
+            </span>
+
+
+        <a href="javascript:;" title="Delete asd" class="close"><i class="icon-remove"></i></a>
+        <!--<a href="javascript:;" title="Edit"><i class="icon-pencil icon-rotate-90"></i></a>-->
+        <!--<a href="javascript:;" title="Download"><i class="icon-download-alt"></i></a>-->
+        <!--<a href="javascript:;" title="Open file at GitHub Gist website"><i class="icon-github"></i></a>-->
+        <!--<a href="javascript:;" title="Copy direct link to clipboard"><i class="icon-link"></i></a>-->
+        <!--<a href="javascript:;"  title="Copy to clip-board"><i class="icon-paper-clip"></i></a>-->
+        <% if(data.type == 'html' || data.type == 'htm'){ %>
+        <a title="切换视图"  class="viewSelect" href="javascript:;">
+            <span class="title">代码视图</span>
+            <code class="icon-sort-down"></code>
+            <input type="hidden" class="type" value="1">
+            <div class="notification hide" >
+                <div>
+                    <ul>
+                        <li class="view1" data-type="1">代码视图</li>
+                        <li class="view1" data-type="2">实时视图</li>
+                        <li class="view2" data-type="3">拆分视图</li>
+                        <li class="view3" data-type="4">积木视图</li>
+                        <!--<li class="view4" data-type="5">全试图</li>-->
+                    </ul>
+
+                </div>
+
+            </div>
+        </a>
+        <a title="在浏览器中预览"  class="viewInBrowser" href="javascript:;">预览</a>
+        <a title="去除无用代码并生成文件"  class="createLastFile" href="javascript:;">生成最终文件</a>
+        <a href="javascript:;" title="保存" class="jimuSave">保存</a>
+        <%}%>
+    </div>
+    <div class="editorMain">
+        <div class="editorArea" id="editor-<%= data.id %>" data-type="code"></div>
+        <div class="editor_view hide"  data-type="view">
+            <iframe>
+
+            </iframe>
+        </div>
+        <div class="editor_jimu hide"  data-type="jimu">
+            <div class="jimu_wrap">
+                <input type="hidden" class="headCode" value=""/>
+                <div class="body" data-uitype="body" editable data-uidata='{}'>
+                    <!--该标签为积木盒子软件功能标签，如果你还想在软件里面编辑则误删 start-->
+                    <input type="hidden" class="chargeThePageCando" value="1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
